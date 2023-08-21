@@ -1,6 +1,6 @@
-server:
-  servlet:
-    context-path: /digital-forensics
+#server:
+#  servlet:
+#    context-path: /digital-forensics
 spring:
   output:
     ansi:
