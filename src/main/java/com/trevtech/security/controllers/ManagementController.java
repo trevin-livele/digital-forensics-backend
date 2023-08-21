@@ -1,4 +1,4 @@
-package com.trevtech.security.demo;
+package com.trevtech.security.controllers;
 
 
 import io.swagger.v3.oas.annotations.Operation;

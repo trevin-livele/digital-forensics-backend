@@ -1,4 +1,4 @@
-package com.trevtech.security.demo;
+package com.trevtech.security.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
