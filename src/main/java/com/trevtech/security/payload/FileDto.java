@@ -1,17 +1,10 @@
 package com.trevtech.security.payload;
-
-import com.trevtech.security.entity.CaseEntity;
-import com.trevtech.security.entity.DataEntity;
-import com.trevtech.security.entity.DeviceEntity;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-
+import lombok.Data;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
+@Data
 public class FileDto {
     private long id;
 

@@ -1,6 +1,6 @@
-package com.trevtech.security.auth;
+package com.trevtech.security.payload;
 
-import com.trevtech.security.user.Role;
+import com.trevtech.security.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -27,6 +27,8 @@ public class FileEntity {
     private String fileType;
     private Long fileSize;
     private LocalDateTime creationDateTime;
+
+
     @ManyToOne
     @JoinColumn(name = "case_id")
     private CaseEntity caseEntity;
@@ -40,6 +42,9 @@ public class FileEntity {
             joinColumns = @JoinColumn(name = "file_id"),
             inverseJoinColumns = @JoinColumn(name = "data_id")
     )
+
     private List<DataEntity> data = new ArrayList<>();
+
+
 
 }

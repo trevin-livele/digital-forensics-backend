@@ -1,6 +1,6 @@
 package com.trevtech.security.config;
 
-import com.trevtech.security.user.UserRepository;
+import com.trevtech.security.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

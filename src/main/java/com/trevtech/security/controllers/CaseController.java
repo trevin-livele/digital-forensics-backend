@@ -1,10 +1,7 @@
 package com.trevtech.security.controllers;
-
-
 import com.trevtech.security.payload.CaseDto;
 import com.trevtech.security.payload.CaseResponse;
 import com.trevtech.security.service.ICaseService;
-import com.trevtech.security.service.impl.CaseServiceImpl;
 import com.trevtech.security.utils.AppConstants;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

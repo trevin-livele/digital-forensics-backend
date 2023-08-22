@@ -1,4 +1,4 @@
-package com.trevtech.security.user;
+package com.trevtech.security.repository;
 
 import java.util.Optional;
 

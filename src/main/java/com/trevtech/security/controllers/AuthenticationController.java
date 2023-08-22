@@ -1,5 +1,9 @@
-package com.trevtech.security.auth;
+package com.trevtech.security.controllers;
 
+import com.trevtech.security.payload.AuthenticationRequest;
+import com.trevtech.security.payload.AuthenticationResponse;
+import com.trevtech.security.service.impl.AuthenticationService;
+import com.trevtech.security.payload.RegisterRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.trevtech.security.user;
+package com.trevtech.security.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.trevtech.security.user.Permission.*;
+import static com.trevtech.security.enums.Permission.*;
 
 @RequiredArgsConstructor
 public enum Role {

@@ -13,9 +13,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 
-import static com.trevtech.security.user.Permission.*;
-import static com.trevtech.security.user.Role.ADMIN;
-import static com.trevtech.security.user.Role.MANAGER;
+import static com.trevtech.security.enums.Permission.*;
+import static com.trevtech.security.enums.Role.ADMIN;
+import static com.trevtech.security.enums.Role.MANAGER;
 import static org.springframework.http.HttpMethod.*;
 
 @Configuration

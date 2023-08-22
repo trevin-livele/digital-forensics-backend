@@ -1,4 +1,4 @@
-package com.trevtech.security.auth;
+package com.trevtech.security.payload;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

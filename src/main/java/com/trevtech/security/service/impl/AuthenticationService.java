@@ -1,11 +1,14 @@
-package com.trevtech.security.auth;
+package com.trevtech.security.service.impl;
 
+import com.trevtech.security.payload.AuthenticationRequest;
+import com.trevtech.security.payload.AuthenticationResponse;
+import com.trevtech.security.payload.RegisterRequest;
 import com.trevtech.security.config.JwtService;
 import com.trevtech.security.token.Token;
 import com.trevtech.security.token.TokenRepository;
 import com.trevtech.security.token.TokenType;
 import com.trevtech.security.entity.User;
-import com.trevtech.security.user.UserRepository;
+import com.trevtech.security.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

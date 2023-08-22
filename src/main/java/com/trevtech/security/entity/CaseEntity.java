@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Data
@@ -21,7 +23,6 @@ public class CaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String caseName;
     private String description;
     private LocalDateTime creationDateTime;
@@ -31,7 +32,6 @@ public class CaseEntity {
     private User user;
 
     @OneToMany(mappedBy = "caseEntity", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FileEntity> files = new ArrayList<>();
-
+    private Set<FileEntity> files = new HashSet<>();
 
 }
