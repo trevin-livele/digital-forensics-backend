@@ -27,4 +27,7 @@ public class DataEntity {
     @ManyToMany(mappedBy = "data")
     private List<FileEntity> fileEntities;
 
+    @ManyToOne
+    @JoinColumn(name = "case_id")
+    private CaseEntity caseEntity;
 }

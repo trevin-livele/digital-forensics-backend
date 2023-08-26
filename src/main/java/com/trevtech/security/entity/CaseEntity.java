@@ -34,4 +34,7 @@ public class CaseEntity {
     @OneToMany(mappedBy = "caseEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<FileEntity> files = new HashSet<>();
 
+    @OneToMany(mappedBy = "caseEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<DeviceEntity> devices = new HashSet<>(); // Correct mappedBy
+
 }

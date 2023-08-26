@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class CaseServiceImpl implements ICaseService {
-private IcaseRepository icaseRepository;
+    private IcaseRepository icaseRepository;
     private ModelMapper mapper;
 
     public CaseServiceImpl(IcaseRepository icaseRepository, ModelMapper mapper){

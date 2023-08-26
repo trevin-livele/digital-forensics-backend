@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
@@ -23,8 +25,16 @@ import java.time.LocalDateTime;
     private String deviceType;
     private String serialNumber;
     private LocalDateTime acquisitionDateTime;
+
+
+    @ManyToMany
+    @JoinTable(name = "device_file",
+            joinColumns = @JoinColumn(name = "device_id"),
+            inverseJoinColumns = @JoinColumn(name = "file_id"))
+    private Set<FileEntity> files = new HashSet<>();
+
     @ManyToOne
-    @JoinColumn(name = "file_id")
-    private FileEntity fileEntity;
+    @JoinColumn(name = "case_id")
+    private CaseEntity caseEntity;
 
 }

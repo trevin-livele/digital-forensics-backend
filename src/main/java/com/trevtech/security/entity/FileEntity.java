@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Data
@@ -33,8 +35,8 @@ public class FileEntity {
     @JoinColumn(name = "case_id")
     private CaseEntity caseEntity;
 
-    @OneToMany(mappedBy = "fileEntity", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DeviceEntity> deviceEntities = new ArrayList<>();
+    @ManyToMany(mappedBy = "files")
+    private Set<DeviceEntity> deviceEntities = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
@@ -44,7 +46,7 @@ public class FileEntity {
     )
 
     private List<DataEntity> data = new ArrayList<>();
-
+    
 
 
 }

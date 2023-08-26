@@ -36,7 +36,7 @@ FilesService filesService;
     }
 
     @PutMapping("/cases/{casesId}/files/{id}")
-    public ResponseEntity<FileDto> updateComment(@PathVariable(value = "caseId") Long caseId,
+    public ResponseEntity<FileDto> updateFile(@PathVariable(value = "caseId") Long caseId,
                                                  @PathVariable(value = "id") Long fileId,
                                                  @Valid @RequestBody FileDto fileDto){
         FileDto updatedFile = filesService.updateFile(caseId, fileId, fileDto);

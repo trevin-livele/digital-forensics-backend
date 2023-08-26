@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface FilesService {
     FileDto createFile(long caseId, FileDto fileDto);
-    List<FileDto> getFilesByCaseId(long postId);
+    List<FileDto> getFilesByCaseId(long fileId);
     FileDto getFileById(Long caseId, Long fileId);
     FileDto updateFile(Long caseId, long fileId, FileDto fileRequest);
     void deleteFileById(Long caseId, Long fileId);
