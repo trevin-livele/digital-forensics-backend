@@ -1,12 +1,11 @@
 package com.trevtech.security;
-
+import org.springframework.context.annotation.Bean;
 import com.trevtech.security.service.impl.AuthenticationService;
 import com.trevtech.security.payload.RegisterRequest;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 import static com.trevtech.security.enums.Role.ADMIN;
 import static com.trevtech.security.enums.Role.MANAGER;

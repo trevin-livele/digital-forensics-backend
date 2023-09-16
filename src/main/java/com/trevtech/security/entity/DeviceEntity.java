@@ -36,5 +36,4 @@ import java.util.Set;
     @ManyToOne
     @JoinColumn(name = "case_id")
     private CaseEntity caseEntity;
-
 }

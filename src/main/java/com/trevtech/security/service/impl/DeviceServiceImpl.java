@@ -1,15 +1,20 @@
 package com.trevtech.security.service.impl;
+import com.trevtech.security.entity.CaseEntity;
 import com.trevtech.security.entity.DeviceEntity;
 import com.trevtech.security.entity.FileEntity;
 import com.trevtech.security.exception.ResourceNotFoundException;
 import com.trevtech.security.payload.DeviceDto;
+import com.trevtech.security.payload.FileDto;
 import com.trevtech.security.repository.IDeviceRepository;
 import com.trevtech.security.repository.IFIleRepository;
 import com.trevtech.security.service.DeviceService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class DeviceServiceImpl implements DeviceService {
@@ -31,10 +36,11 @@ public class DeviceServiceImpl implements DeviceService {
         DeviceEntity deviceEntity = mapToEntity(deviceDto);
         FileEntity fileEntity = ifIleRepository.findById(fileId).orElseThrow(
                 () -> new ResourceNotFoundException("File", "id", fileId));
-        deviceEntity.setFiles((Set<FileEntity>) fileEntity);
+        deviceEntity.setFiles(Collections.singleton(fileEntity));
         DeviceEntity newDeviceEntity = iDeviceRepository.save(deviceEntity);
         return mapToDTO(newDeviceEntity);
     }
+
 
     @Override
     public DeviceDto getDeviceById(Long fileId, Long deviceId) {
@@ -84,6 +90,11 @@ public class DeviceServiceImpl implements DeviceService {
         iDeviceRepository.delete(deviceEntity);
     }
 
+    @Override
+    public List<DeviceDto> getDeviceByFileId(long fileId) {
+        List<DeviceEntity> deviceEntities = iDeviceRepository.findFileById(fileId);
+        return deviceEntities.stream().map(deviceEntity -> mapToDTO(deviceEntity)).collect(Collectors.toList());
+    }
     // convert Entity into DTO
     private DeviceDto mapToDTO(DeviceEntity deviceEntity){
         DeviceDto deviceDto = mapper.map(deviceEntity, DeviceDto.class);

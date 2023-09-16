@@ -1,10 +1,7 @@
 package com.trevtech.security.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -13,8 +10,10 @@ import java.util.List;
 import java.util.Set;
 
 
-@Data
-@Builder
+//@Data
+@Getter
+@Setter
+//@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

@@ -1,19 +1,24 @@
 package com.trevtech.security.controllers;
 import com.trevtech.security.payload.CaseDto;
 import com.trevtech.security.payload.CaseResponse;
+import com.trevtech.security.repository.IcaseRepository;
 import com.trevtech.security.service.ICaseService;
 import com.trevtech.security.utils.AppConstants;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1/cases")
 public class CaseController {
     private ICaseService caseService;
 
+    @Autowired
+    IcaseRepository icaseRepository;
 
     public CaseController(ICaseService caseService) {
         this.caseService = caseService;
@@ -34,9 +39,13 @@ public class CaseController {
             @RequestParam(value = "sortBy", defaultValue = AppConstants.DEFAULT_SORT_BY, required = false) String sortBy,
             @RequestParam(value = "sortDir", defaultValue = AppConstants.DEFAULT_SORT_DIRECTION, required = false) String sortDir
     ) {
-
     return caseService.getAllCases(pageNo, pageSize, sortBy, sortDir);
     }
+
+    // get the count of cases
+
+
+
 
     // get case by id
     @GetMapping("/{id}")
@@ -57,7 +66,7 @@ public class CaseController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCase(@PathVariable(name = "id") long id){
         caseService.deleteCaseById(id);
-        return new ResponseEntity<>("Case entity deleted successfully.", HttpStatus.OK);
+        return new ResponseEntity<>("Case deleted successfully.", HttpStatus.OK);
     }
 
 }

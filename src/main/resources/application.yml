@@ -1,4 +1,5 @@
 #server:
+#  port: 6767
 #  servlet:
 #    context-path: /digital-forensics
 spring:

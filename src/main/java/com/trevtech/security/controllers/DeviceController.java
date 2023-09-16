@@ -1,10 +1,13 @@
 package com.trevtech.security.controllers;
 import com.trevtech.security.payload.DeviceDto;
+import com.trevtech.security.payload.FileDto;
 import com.trevtech.security.service.DeviceService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/devices")
@@ -18,17 +21,19 @@ public class DeviceController {
     }
 
     @PostMapping("/{fileId}/devices")
-    public ResponseEntity<DeviceDto> createDevice(@PathVariable(value = "deviceId")long fileId,
+    public ResponseEntity<DeviceDto> createDevice(@PathVariable(value = "fileId")long fileId,
                                                   @Valid @RequestBody DeviceDto deviceDto){
         return new ResponseEntity<>(deviceService.createDevice(fileId, deviceDto), HttpStatus.CREATED);
     }
 
 
 
-//    @GetMapping("/files/{deviceId}/devices")
-//    public List<DeviceDto> getDeviceByFileId(@PathVariable(value = "fileId") Long fileId){
-//        return deviceService.getDeviceByFileId(fileId);
-//    }
+
+    @GetMapping("/files/{deviceId}/devices")
+    public List<DeviceDto> getDeviceByFileId(@PathVariable(value = "fileId") long fileId){
+        return deviceService.getDeviceByFileId(fileId);
+    }
+
 
 
     @GetMapping("/files/{fileId}/devices/{id}")
